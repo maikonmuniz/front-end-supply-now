@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    background-color: #bb4c4c;
+    
+  }
+  
+  .navbar_logo {
+    display: flex;
+    font-size: 30px;
+    color: blanchedalmond;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  
+.navbar ul {
+    display: flex;
+    align-items: center;
+  }
+  
+.navbar li{
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.navbar a{
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    margin: 0;
+  }
