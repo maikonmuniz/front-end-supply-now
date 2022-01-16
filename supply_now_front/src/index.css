@@ -1,9 +1,9 @@
  * {
    padding: 0;
    margin: 0;
-   background-color: #1C1C1C;
+   background-color: #f3f3f3;
  }
 
-h1{
-  color: aliceblue;
+h1{ 
+  color: rgb(0, 0, 0);
 }
