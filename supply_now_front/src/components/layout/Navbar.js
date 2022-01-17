@@ -5,6 +5,7 @@ function Navbar(){
     return (
         <nav className={styles.navbar}>
             <h1 className={styles.navbar_logo}>Supply Now</h1>
+            <ul>
             <li>
                 <Link to="/">Produtos</Link>
             </li>
@@ -14,6 +15,7 @@ function Navbar(){
             <li>
                 <Link to="/Login">Login</Link>
             </li>
+            </ul>
         </nav>
     )
 }
