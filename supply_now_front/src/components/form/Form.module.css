@@ -1,15 +1,14 @@
 .form_container {
     max-width: 300px;
-    margin: 0 auto;
     background-color: #fff;
     border-radius: 15px;
   }
-  
+
   .form_container input[type='submit'] {
     border-radius: 8px;
-    background-color: #afafaf;
-    color: #fff;
-    border: none;
+    border: 1px solid rgb(216, 216, 216);
+    color: #7b7b7b;
+    border: 0.5px solid rgba(150, 150, 150, 0.507);
     min-width: 100px;
     min-height: 2.5rem;
     width: 100%;
@@ -19,14 +18,15 @@
   }
   
   .form_container input[type='submit']:hover {
-    background-color: #ce5353;
+    background-color: #6b6b6b;
+    color: white;
   }
   
   .form_container p {
     margin-top: 1em;
   }
   
-  .form_container p a {
+  .form_container h1 p a {
     color: #16479d;
     font-weight: bold;
   }
