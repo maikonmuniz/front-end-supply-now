@@ -15,10 +15,14 @@ import Register from './components/pages/Auth/Register'
 import Login from './components/pages/Auth/Login'
 
 
+// Context
+import {UserProvider} from './context/UserContext'
+
 
 function App() {
   return (
     <Router>
+      <UserProvider>
       <Navbar />
       <Container>
       <Routes>
@@ -27,7 +31,8 @@ function App() {
         <Route path="/register" element={<Register />} />
       </Routes>
       </Container>
-     <Footer /> 
+     <Footer />
+     </UserProvider>
     </Router>
   )
 }
