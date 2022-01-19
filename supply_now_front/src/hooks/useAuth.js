@@ -1,6 +1,5 @@
 import api from '../utils/api'
-import {useState, useEffect} from 'react'
-import {useHistory} from 'react-router-dom'
+
 
 export default function useAuth(){
     async function register(user){
@@ -9,9 +8,9 @@ export default function useAuth(){
             const data = await api.post('users/register', user).then((response) => {
                 return response.data
             })
-            console.log(user)
+            console.log(data)
         }catch(error){
-            console.log(erro)
+            console.log(error)
         }
     }
     return { register }

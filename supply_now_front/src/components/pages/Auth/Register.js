@@ -1,23 +1,34 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Input from '../../form/Input'
 
 import styles from '../../form/Form.module.css'
 import { Link } from 'react-router-dom'
 
-function Register() {
-  const [user, setUser] = useState({})
+//context 
+import { Context } from '../../../context/UserContext'
 
+function Register() {
+  
+  const [dados, setDados] = useState({})
+  const [user, setUser] = useState({})
+  const { register } = useContext(Context)
+  
 function handleChange(e){
-  setUser({...user, [e.target.name]: e.target.value })
+  setDados({...dados, [e.target.name]: e.target.value })
+  setUser({user:dados})
 }
+
 
 function handleSubmit(e){
   e.preventDefault()
-  console.log(user)
+
+
+  //console.log(user)
+  register(user)
 }
 
   return (
-    <>
+  
     <section className={styles.form_container}>
         <form onSubmit={handleSubmit}>
         <p>Registrar</p>      
@@ -29,19 +40,37 @@ function handleSubmit(e){
           handleOnChange={handleChange}
         />
         <Input
-          text="Telefone"
-          type="text"
-          name="phone"
-          placeholder="Digite o seu telefone"
-          handleOnChange={handleChange}
-        />
-        <Input
           text="E-mail"
           type="email"
           name="email"
           placeholder="Digite o seu e-mail"
           handleOnChange={handleChange}
         />
+        <Input
+          text="Telefone"
+          type="text"
+          name="phone"
+          placeholder="Digite o seu telefone"
+          handleOnChange={handleChange}
+        />
+
+        <Input
+          text="CPF"
+          type="text"
+          name="cpf"
+          placeholder="Digite o seu telefone"
+          handleOnChange={handleChange}
+        />
+
+
+        <Input
+          text="Tipo"
+          type="text"
+          name="tipo"
+          placeholder="Digite o seu telefone"
+          handleOnChange={handleChange}
+        />
+
         <Input
           text="Senha"
           type="password"
@@ -60,11 +89,8 @@ function handleSubmit(e){
         <p>Já tem conta? clique aqui</p>
         </form>
 
-
-        
     </section>  
 
-    </>
   )
 }
 
