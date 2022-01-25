@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import Input from '../../form/Input'
 
 import styles from '../../form/Form.module.css'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 //context 
 import { Context } from '../../../context/UserContext'
@@ -10,21 +10,22 @@ import { Context } from '../../../context/UserContext'
 function Register() {
   
   const [dados, setDados] = useState({})
-  const [user, setUser] = useState({})
   const { register } = useContext(Context)
-  
+
 function handleChange(e){
-  setDados({...dados, [e.target.name]: e.target.value })
-  setUser({user:dados})
+  setDados({...dados, [e.target.name]: e.target.value})
+  
 }
 
 
 function handleSubmit(e){
   e.preventDefault()
-
-
-  //console.log(user)
-  register(user)
+  // console.log({
+  //   user: dados
+  // })
+    register({
+      user: dados
+    })
 }
 
   return (
