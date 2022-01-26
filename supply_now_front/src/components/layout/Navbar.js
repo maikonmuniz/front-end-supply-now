@@ -20,6 +20,9 @@ function Navbar(){
             </li>
             {authenticated ? (
             <>
+            <li>
+                <Link to="/user/profile">Perfil</Link>
+            </li>
             <li onClick={logout}>
                 <Link to="/"> Sair</Link>
             </li>
@@ -33,6 +36,7 @@ function Navbar(){
                 <Link to="/Login">Login</Link>
             </li>
             </>)}
+
             </ul>
         </nav>
     )
