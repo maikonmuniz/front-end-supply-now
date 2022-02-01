@@ -3,10 +3,6 @@ import styleForm from '../../form/Form.module.css'
 import Input from '../../form/Input'
 import api from '../../../utils/api'
 
-function handleChange(e){
-
-}
-
 function Profile(){
     const [user, setUser] = useState({})
     const [token] = useState(localStorage.getItem('token') || '')
@@ -21,12 +17,35 @@ function Profile(){
                 })
     }, [token])
 
+
+    function handleChange(e){
+
+      setUser({...user, [e.target.name]: e.target.value})
+
+    }
+
+
+
+    async function handleSubmit(e){
+    e.preventDefault()
+    const data = await api.patch(`users/edit/${user._id}`, user, {
+            headers: {
+              Authorization: `bearer ${JSON.parse(token)}`,
+            }
+    }).then((response) => {
+      console.log(user)
+      return response.data
+    }).catch((err) => {
+      return err.response.data
+    })}
+
     return(
         <section>
             <h1>Profile</h1>
             
                 
-        <form className={styleForm.form_container}> 
+        <form onSubmit={handleSubmit} className={styleForm.form_container}> 
+        
         <Input 
           text="Nome"
           type="text"
@@ -34,6 +53,7 @@ function Profile(){
           placeholder="Digite o seu nome"
           handleOnChange={handleChange}
           value={user.name || ''}/>
+
         <Input
           text="E-mail"
           type="email"
@@ -41,6 +61,7 @@ function Profile(){
           placeholder="Digite o seu e-mail"
           handleOnChange={handleChange}
           value={user.email || ''}/>
+
         <Input
           text="Telefone"
           type="text"
@@ -53,15 +74,16 @@ function Profile(){
           text="CPF"
           type="text"
           name="cpf"
-          placeholder="Digite o seu telefone"
+          placeholder="Digite o seu CPF"
           handleOnChange={handleChange}
+          value={user.cpf || ''}
         />
 
         <Input
           text="Tipo"
           type="text"
           name="tipo"
-          placeholder="Digite o seu telefone"
+          placeholder="Digite o tipo"
           handleOnChange={handleChange}
           value={user.tipo || ''}
         />

@@ -21,6 +21,9 @@ function Navbar(){
             {authenticated ? (
             <>
             <li>
+                <Link to="/product/myproducts">Meus Produtos</Link>
+            </li>
+            <li>
                 <Link to="/user/profile">Perfil</Link>
             </li>
             <li onClick={logout}>
