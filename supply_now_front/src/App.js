@@ -14,9 +14,10 @@ import Home from './components/pages/Home'
 import Register from './components/pages/Auth/Register'
 import Login from './components/pages/Auth/Login'
 import Profile from './components/pages/User/Profile'
-
+import AddProducts from './components/pages/Product/addPrducts'
 // Context
 import {UserProvider} from './context/UserContext'
+import MyProducts from './components/pages/Product/myProducts'
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/user/profile" element={<Profile />} />
+        <Route path="/product/myproducts" element={<MyProducts/>} />
+        <Route path="/product/add" element={<AddProducts />} />
+
       </Routes>
       </Container>
      <Footer />
