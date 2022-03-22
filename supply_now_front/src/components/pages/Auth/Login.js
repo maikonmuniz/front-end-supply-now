@@ -21,10 +21,13 @@ function Login(){
     }
 
     return(
+        <>
+        
         <section className={styles.form_container}>
-            <h1>Login</h1>
+            
             <form onSubmit={handleSubmit}>
-                <Input 
+            <h1 className={styles.h1_form}>Login</h1>
+                <Input
                 text="E-mail"
                 type="email"
                 name="email"
@@ -32,7 +35,7 @@ function Login(){
                 handleOnChange={handleChange}/>
 
                 <Input 
-                text="senha"
+                text="Senha"
                 type="password"
                 name="password"
                 placeholder="Digite sua senha"
@@ -43,6 +46,7 @@ function Login(){
             <p>Não tem conta? <Link to="/register">Clique</Link></p>
             </form>
         </section>
+        </>
     )
 }
 

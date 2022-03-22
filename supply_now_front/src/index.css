@@ -2,3 +2,10 @@
    padding: 0;
    margin: 0;
  }
+
+body{
+  background-color: rgba(255, 255, 255, 0.411);
+  background-image: url('../src/assets/img/bg.png');
+  width: 100%;
+  height: 100%;
+}
