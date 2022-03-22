@@ -24,8 +24,6 @@ function Profile(){
 
     }
 
-
-
     async function handleSubmit(e){
     e.preventDefault()
     const data = await api.patch(`users/edit/${user._id}`, user, {
@@ -41,7 +39,7 @@ function Profile(){
 
     return(
         <section>
-            <h1>Profile</h1>
+            <h1 className={styleForm.h1_form}>Profile</h1>
             
                 
         <form onSubmit={handleSubmit} className={styleForm.form_container}> 

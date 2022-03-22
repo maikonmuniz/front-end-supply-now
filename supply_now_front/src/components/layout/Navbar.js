@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 import styles from './Navbar.module.css'
 import { useContext } from 'react'
+import logo from "../../assets/img/logo.png"
 
 //context 
 import {Context} from '../../context/UserContext'
@@ -13,10 +14,10 @@ function Navbar(){
     return (
 
         <nav className={styles.navbar}>
-            <h1 className={styles.navbar_logo}>Supply Now</h1>
+            <img className={styles.navbar_logo} src={logo}/>
             <ul>
             <li>
-                <Link to="/">Produtos</Link>
+                <Link to="/">Home</Link>
             </li>
             {authenticated ? (
             <>
@@ -27,7 +28,7 @@ function Navbar(){
                 <Link to="/user/profile">Perfil</Link>
             </li>
             <li onClick={logout}>
-                <Link to="/"> Sair</Link>
+                <Link className={styles.input} to="/">Sair</Link>
             </li>
             </>
             ) : (
